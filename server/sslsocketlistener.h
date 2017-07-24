@@ -13,6 +13,7 @@ class SslSocketListener : public QThread
     Q_OBJECT
 public:
     SslSocketListener(quintptr socketDescriptor, QObject *parent = Q_NULLPTR);
+    ~SslSocketListener() = default;
 
     void run();
 

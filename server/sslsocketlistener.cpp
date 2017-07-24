@@ -3,11 +3,7 @@
 #include <QSslSocket>
 #include <QFile>
 #include <QDir>
-
 #include <QDebug>
-
-#include <iostream>
-#include <string>
 
 
 SslSocketListener::SslSocketListener(quintptr socketDescriptor, QObject *parent)

@@ -43,7 +43,7 @@ QString HttpMultiPartHandler::errorString() const
         return "HttpMultiPartHandler::Data's size representation failed";
     case NoFileNameError:
         return "HttpMultiPartHandler::Cannot found 'File-Name' marker";
-    case NoEndBoundaryMarker:
+    case NoEndBoundaryMarkerError:
         return "HttpMultiPartHandler::Cennot found data's end boundary marker";
     default: ;
     }
@@ -115,7 +115,7 @@ bool HttpMultiPartHandler::stripData()
     pos = mData.indexOf(BOUNDARY_MARKER) - BOUNDARY_LINE_SEPARATOR.size();
     if (pos == -1)
     {
-        setError(NoEndBoundaryMarker);
+        setError(NoEndBoundaryMarkerError);
         return false;
     }
     mData.remove(pos, mData.size() - pos);

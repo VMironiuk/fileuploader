@@ -13,10 +13,11 @@ public:
         NoContentLengthError,
         ContentLengthRepresentationError,
         NoFileNameError,
-        NoEndBoundaryMarker
+        NoEndBoundaryMarkerError
     };
 
     explicit HttpMultiPartHandler(QObject *parent = nullptr);
+    ~HttpMultiPartHandler() = default;
 
     void addPartitionedData(const QByteArray &data);
     QString errorString() const;

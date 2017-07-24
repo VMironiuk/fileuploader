@@ -27,7 +27,8 @@ void SslServer::incomingConnection(qintptr socketDescriptor)
     connect(socketListener, SIGNAL(fileReady(QString,QByteArray)),
             this, SLOT(saveFile(QString,QByteArray)), Qt::DirectConnection);
     connect(socketListener, SIGNAL(errorOccured(QString)),
-            this, SLOT(onSslListenerErrorOccured(QString)), Qt::DirectConnection);
+            this, SLOT(onSslSocketListenerErrorOccured(QString)), Qt::DirectConnection);
+
     socketListener->start();
 }
 
@@ -39,7 +40,7 @@ void SslServer::saveFile(const QString &fileName, const QByteArray &fileContent)
         file.write(fileContent);
 }
 
-void SslServer::onSslListenerErrorOccured(const QString &error)
+void SslServer::onSslSocketListenerErrorOccured(const QString &error)
 {
     qDebug() << error;
 }

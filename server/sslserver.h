@@ -17,7 +17,7 @@ protected:
 
 private slots:
     void saveFile(const QString &fileName, const QByteArray &fileContent);
-    void onSslListenerErrorOccured(const QString &error);
+    void onSslSocketListenerErrorOccured(const QString &error);
 
 private:
     quint16 mPort;

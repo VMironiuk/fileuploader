@@ -1,8 +1,6 @@
 #include "widget.h"
-#include <QApplication>
 
-#include <QDebug>
-#include <QSslSocket>
+#include <QApplication>
 
 int main(int argc, char *argv[])
 {
